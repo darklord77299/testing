@@ -1,0 +1,29 @@
+{
+  "id": "hello_world_workflow",
+  "name": "Hello World Workflow",
+  "version": "1.0",
+  "specVersion": "0.8",
+  "description": "A simple workflow to test Apache KIE Serverless Workflow Editor.",
+  "start": "GreetState",
+  "states": [
+    {
+      "name": "GreetState",
+      "type": "operation",
+      "actions": [
+        {
+          "functionRef": {
+            "refName": "greetFunction"
+          }
+        }
+      ],
+      "end": true
+    }
+  ],
+  "functions": [
+    {
+      "name": "greetFunction",
+      "operation": "sysout",
+      "type": "custom"
+    }
+  ]
+}
