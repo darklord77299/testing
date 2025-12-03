@@ -1,0 +1,28 @@
+# HELP http_requests_total The total number of HTTP requests.
+# TYPE http_requests_total counter
+http_requests_total{method="get",status="200"} 1027
+http_requests_total{method="post",status="404"} 3
+
+# HELP http_duration_seconds Histogram of HTTP request durations.
+# TYPE http_duration_seconds histogram
+http_duration_seconds_bucket{le="0.1"} 2400
+http_duration_seconds_bucket{le="0.2"} 3300
+http_duration_seconds_bucket{le="0.5"} 4000
+http_duration_seconds_bucket{le="1.0"} 4500
+http_duration_seconds_bucket{le="2.5"} 4600
+http_duration_seconds_bucket{le="5.0"} 4605
+http_duration_seconds_bucket{le="10.0"} 4607
+http_duration_seconds_bucket{le="+Inf"} 4608
+http_duration_seconds_sum 123.45
+http_duration_seconds_count 4608
+
+# HELP memory_usage_bytes Current memory usage in bytes.
+# TYPE memory_usage_bytes gauge
+memory_usage_bytes{type="rss"} 123456789
+memory_usage_bytes{type="heap"} 234567890
+
+# HELP cpu_usage_seconds_total Total user and system CPU time spent in seconds.
+# TYPE cpu_usage_seconds_total counter
+cpu_usage_seconds_total{mode="user"} 345.67
+cpu_usage_seconds_total{mode="system"} 89.01
+
